@@ -63,7 +63,7 @@
       type: single_value
       model: parag_milk_foods
       explore: fact_sales
-      fields: [fact_sales.total_invoice_total]
+      fields: [fact_sales.total_invoice_total_cr]
       custom_color_enabled: true
       custom_color: "#3A3A3A"
       listen:
@@ -112,11 +112,11 @@
       height: 4
 
     - name: quality_risk_value
-      title: Quality Risk Value (INR)
+      title: Quality Risk Value
       type: single_value
       model: parag_milk_foods
       explore: fact_quality_inspection
-      fields: [fact_quality_inspection.total_value_at_risk]
+      fields: [fact_quality_inspection.total_value_at_risk_lakh]
       custom_color_enabled: true
       custom_color: "#8B1E3F"
       listen:

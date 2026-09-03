@@ -97,14 +97,23 @@ view: fact_quality_inspection {
     type: number
     sql: ${TABLE}.value_at_risk_inr ;;
   }
+
   measure: total_value_at_risk {
     type: sum
     sql: ${value_at_risk_inr} ;;
-    value_format_name: decimal_2
+    value_format: "\u20B9#,##0"
     label: "Total Quality Risk Value (INR)"
+  }
+
+  measure: total_value_at_risk_lakh {
+    type: number
+    sql: ${total_value_at_risk} / 100000.0 ;;
+    value_format: "\u20B9#,##0.00\" L\""
+    label: "Quality Risk Value (Lakh)"
   }
   measure: count {
     type: count
     drill_fields: [inspection_id]
   }
+
 }

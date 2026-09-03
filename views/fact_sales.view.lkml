@@ -56,19 +56,7 @@ view: fact_sales {
     type: number
     sql: ${TABLE}.invoice_total ;;
   }
-  measure: total_invoice_total {
-    type: sum
-    sql: ${invoice_total} ;;
-    value_format_name: decimal_2
-    label: "Total Revenue (INR)"
-  }
 
-  measure: average_invoice_total {
-    type: average
-    sql: ${invoice_total} ;;
-    value_format_name: decimal_2
-    label: "Average Order Value (INR)"
-  }
   dimension: pack_category_id {
     type: number
     sql: ${TABLE}.pack_category_id ;;
@@ -112,4 +100,25 @@ view: fact_sales {
     type: count
     drill_fields: [invoice_no]
   }
+  measure: total_invoice_total {
+    type: sum
+    sql: ${invoice_total} ;;
+    value_format: "\u20B9#,##0"
+    label: "Total Revenue (INR)"
+  }
+
+  measure: total_invoice_total_cr {
+    type: number
+    sql: ${total_invoice_total} / 10000000.0 ;;
+    value_format: "\u20B9#,##0.00\" Cr\""
+    label: "Total Revenue (Cr)"
+  }
+
+  measure: average_invoice_total {
+    type: average
+    sql: ${invoice_total} ;;
+    value_format: "\u20B9#,##0"
+    label: "Average Order Value (INR)"
+  }
+
 }
