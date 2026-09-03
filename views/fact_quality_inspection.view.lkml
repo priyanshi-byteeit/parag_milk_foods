@@ -97,6 +97,12 @@ view: fact_quality_inspection {
     type: number
     sql: ${TABLE}.value_at_risk_inr ;;
   }
+  measure: total_value_at_risk {
+    type: sum
+    sql: ${value_at_risk_inr} ;;
+    value_format_name: decimal_2
+    label: "Total Quality Risk Value (INR)"
+  }
   measure: count {
     type: count
     drill_fields: [inspection_id]

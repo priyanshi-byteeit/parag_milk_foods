@@ -57,6 +57,13 @@ view: fact_replenishment {
     sql: ${TABLE}.fill_rate_pct ;;
   }
 
+  measure: average_fill_rate {
+    type: average
+    sql: ${fill_rate_pct} ;;
+    value_format_name: percent_1
+    label: "Avg Fill Rate %"
+  }
+
   dimension: max_threshold {
     type: number
     sql: ${TABLE}.max_threshold ;;
