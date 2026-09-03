@@ -56,7 +56,19 @@ view: fact_sales {
     type: number
     sql: ${TABLE}.invoice_total ;;
   }
+  measure: total_invoice_total {
+    type: sum
+    sql: ${invoice_total} ;;
+    value_format_name: decimal_2
+    label: "Total Revenue (INR)"
+  }
 
+  measure: average_invoice_total {
+    type: average
+    sql: ${invoice_total} ;;
+    value_format_name: decimal_2
+    label: "Average Order Value (INR)"
+  }
   dimension: pack_category_id {
     type: number
     sql: ${TABLE}.pack_category_id ;;
@@ -75,6 +87,11 @@ view: fact_sales {
   dimension: qty {
     type: number
     sql: ${TABLE}.qty ;;
+  }
+  measure: total_qty {
+    type: sum
+    sql: ${qty} ;;
+    label: "Total Units Sold"
   }
 
   dimension: revenue_stream {
