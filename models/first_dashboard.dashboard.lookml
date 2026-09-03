@@ -1,4 +1,4 @@
-- dashboard: parag_executive_overview
+- dashboard: first_dashboard
   title: Parag Milk Foods – Executive Overview
   layout: newspaper
   preferred_viewer: dashboards-next
