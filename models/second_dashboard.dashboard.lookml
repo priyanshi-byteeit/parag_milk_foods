@@ -16,7 +16,7 @@
         display: inline
       model: parag_milk_foods
       explore: fact_sales
-      field: fact_sales.invoice_date_date
+      field: fact_sales.invoice_date
     - name: Brand
       title: Brand
       type: field_filter
@@ -62,7 +62,7 @@
       explore: fact_sales
       fields: [fact_sales.total_invoice_total]
       listen:
-        Date Range: fact_sales.invoice_date_date
+        Date Range: fact_sales.invoice_date
         Brand: dim_brand.brand_name
         Channel: fact_sales.channel
         State: dim_location.state
@@ -78,7 +78,7 @@
       explore: fact_sales
       fields: [fact_sales.total_qty]
       listen:
-        Date Range: fact_sales.invoice_date_date
+        Date Range: fact_sales.invoice_date
         Brand: dim_brand.brand_name
         Channel: fact_sales.channel
         State: dim_location.state
@@ -94,7 +94,7 @@
       explore: fact_replenishment
       fields: [fact_replenishment.average_fill_rate]
       listen:
-        Date Range: fact_replenishment.doc_date_date
+        Date Range: fact_replenishment.doc_date
         Brand: dim_brand.brand_name
         State: dim_location.state
       row: 0
@@ -109,7 +109,7 @@
       explore: fact_quality_inspection
       fields: [fact_quality_inspection.total_value_at_risk]
       listen:
-        Date Range: fact_quality_inspection.inspection_date_date
+        Date Range: fact_quality_inspection.inspection_date
         Brand: dim_brand.brand_name
         State: dim_location.state
       row: 0
@@ -122,10 +122,10 @@
       type: looker_line
       model: parag_milk_foods
       explore: fact_sales
-      fields: [fact_sales.invoice_date_week, fact_sales.total_invoice_total]
+      fields: [fact_sales.invoice_week, fact_sales.total_invoice_total]
       pivots: []
       listen:
-        Date Range: fact_sales.invoice_date_date
+        Date Range: fact_sales.invoice_date
         Brand: dim_brand.brand_name
         Channel: fact_sales.channel
         State: dim_location.state
@@ -143,7 +143,7 @@
       sorts: [fact_sales.total_invoice_total desc]
       limit: 10
       listen:
-        Date Range: fact_sales.invoice_date_date
+        Date Range: fact_sales.invoice_date
         Brand: dim_brand.brand_name
         Channel: fact_sales.channel
       row: 4
@@ -158,7 +158,7 @@
       explore: fact_sales
       fields: [fact_sales.channel, fact_sales.total_invoice_total]
       listen:
-        Date Range: fact_sales.invoice_date_date
+        Date Range: fact_sales.invoice_date
         Brand: dim_brand.brand_name
         State: dim_location.state
       row: 12
@@ -175,7 +175,7 @@
       sorts: [fact_sales.total_invoice_total desc]
       limit: 10
       listen:
-        Date Range: fact_sales.invoice_date_date
+        Date Range: fact_sales.invoice_date
         Brand: dim_brand.brand_name
         Channel: fact_sales.channel
         State: dim_location.state
@@ -192,7 +192,7 @@
       fields: [dim_location.state, dim_product.category, fact_sales.total_invoice_total]
       pivots: [dim_product.category]
       listen:
-        Date Range: fact_sales.invoice_date_date
+        Date Range: fact_sales.invoice_date
         Brand: dim_brand.brand_name
         Channel: fact_sales.channel
       row: 20
