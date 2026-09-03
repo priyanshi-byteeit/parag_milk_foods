@@ -4,6 +4,8 @@ connection: "parag_milk_foods"
 # include all the views
 include: "/views/**/*.view.lkml"
 include: "/views/*.view"
+include: "/models/*.dashboard.lookml"
+
 
 
 # Datagroups define a caching policy for an Explore. To learn more,
