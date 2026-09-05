@@ -101,14 +101,14 @@ view: fact_quality_inspection {
   measure: total_value_at_risk {
     type: sum
     sql: ${value_at_risk_inr} ;;
-    value_format: "\u20B9#,##0"
+    value_format: "\"₹\"#,##0"
     label: "Total Quality Risk Value (INR)"
   }
 
   measure: total_value_at_risk_lakh {
     type: number
     sql: ${total_value_at_risk} / 100000.0 ;;
-    value_format: "\u20B9#,##0.00\" L\""
+    value_format: "\"₹\"#,##0.00\" L\""
     label: "Quality Risk Value (Lakh)"
   }
   measure: count {

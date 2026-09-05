@@ -50,4 +50,9 @@ view: dim_location {
     type: count
     drill_fields: [location_id, location_name]
   }
+  dimension: location {
+    type: location
+    sql_latitude: ${TABLE}.latitude ;;
+    sql_longitude: ${TABLE}.longitude ;;
+  }
 }

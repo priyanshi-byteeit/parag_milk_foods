@@ -60,7 +60,7 @@ view: fact_replenishment {
   measure: average_fill_rate {
     type: average
     sql: ${fill_rate_pct} ;;
-    value_format_name: percent_1
+    value_format: "0.0\"%\""
     label: "Avg Fill Rate %"
   }
 

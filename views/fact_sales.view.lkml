@@ -81,6 +81,18 @@ view: fact_sales {
     sql: ${qty} ;;
     label: "Total Units Sold"
   }
+  measure: total_qty_lakh {
+    type: number
+    sql: ${total_qty} / 100000.0 ;;
+    value_format: "#,##0.00\" L\""
+    label: "Total Units Sold (Lakh)"
+  }
+
+  measure: branch_count {
+    type: count_distinct
+    sql: ${branch} ;;
+    label: "Active Depots"
+  }
 
   dimension: revenue_stream {
     type: string
@@ -103,21 +115,21 @@ view: fact_sales {
   measure: total_invoice_total {
     type: sum
     sql: ${invoice_total} ;;
-    value_format: "\u20B9#,##0"
+    value_format: "\"₹\"#,##0"
     label: "Total Revenue (INR)"
   }
 
   measure: total_invoice_total_cr {
     type: number
     sql: ${total_invoice_total} / 10000000.0 ;;
-    value_format: "\u20B9#,##0.00\" Cr\""
+    value_format: "\"₹\"#,##0.00\" Cr\""
     label: "Total Revenue (Cr)"
   }
 
   measure: average_invoice_total {
     type: average
     sql: ${invoice_total} ;;
-    value_format: "\u20B9#,##0"
+    value_format: "\"₹\"#,##0"
     label: "Average Order Value (INR)"
   }
 
